@@ -7,8 +7,12 @@ import {
 
 import RNSensors from 'react-native-sensors';
 const { Accelerometer, Gyroscope } = RNSensors;
-const accelerationObservable = new Gyroscope({
+const accelerationObservable = new Accelerometer({
   updateInterval: 100, // defaults to 100ms
+});
+
+const gyroscopeObservable = new Gyroscope({
+  updateInterval: 2000, // defaults to 100ms
 });
 
 export default class SensorExample extends Component {
@@ -20,26 +24,45 @@ export default class SensorExample extends Component {
         y: 'unknown',
         z: 'unknown',
       },
+      gyroscope: {
+        x: 'unknown',
+        y: 'unknown',
+        z: 'unknown',
+      }
     };
   }
+
   componentWillMount() {
     accelerationObservable
       .subscribe(acceleration => this.setState({
         acceleration,
       }));
+
+    gyroscopeObservable
+      .subscribe(gyroscope => this.setState({
+        gyroscope,
+      }));
   }
+
   render() {
     const {
       acceleration,
+      gyroscope,
     } = this.state;
 
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Acceleration
+          Acceleration:
         </Text>
         <Text style={styles.instructions}>
           {acceleration.x + '/' + acceleration.y + '/' + acceleration.z}
+        </Text>
+        <Text style={styles.welcome}>
+          Gyroscope:
+        </Text>
+        <Text style={styles.instructions}>
+          {gyroscope.x + '/' + gyroscope.y + '/' + gyroscope.z}
         </Text>
       </View>
     );
@@ -47,6 +70,7 @@ export default class SensorExample extends Component {
 
   componentWillUnmount() {
     accelerationObservable.stop();
+    gyroscopeObservable.stop();
   }
 }
 
