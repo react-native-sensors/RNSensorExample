@@ -7,7 +7,7 @@ import {
 import ScrollableTabView, {DefaultTabBar, } from 'react-native-scrollable-tab-view';
 
 import SensorExample from './SensorExample';
-import SensorAwareViewExample from './SensorAwareViewExample';
+import DecoratorExample from './DecoratorExample';
 
 export default class Example extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class Example extends Component {
         renderTabBar={() => <DefaultTabBar />}
       >
         <SensorExample tabLabel="Sensors" />
-        <SensorAwareViewExample tabLabel="SensorAwareView" />
+        <DecoratorExample tabLabel="SensorAwareView" />
       </ScrollableTabView>
     );
   }

@@ -49,7 +49,7 @@ class SensorsDisplay extends Component {
   }
 }
 
-export default class SensorAwareViewExample extends Component {
+export default class DecoratorExample extends Component {
   render() {
     return (
       <View style={styles.container}>
