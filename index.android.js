@@ -1,5 +1,5 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import SensorExample from './SensorExample';
+import Example from './Example';
 
-AppRegistry.registerComponent('SensorExample', () => SensorExample);
+AppRegistry.registerComponent('SensorExample', () => Example);
