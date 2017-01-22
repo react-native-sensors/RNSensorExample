@@ -16,9 +16,18 @@ function SensorView(props) {
   )
 }
 
-const SensorDisplay = ({ value, name }) => (
-  <Text style={styles.welcome}>{name}: {value}</Text>
-);
+const SensorDisplay = ({
+  value: {
+    x = 0,
+    y = 0,
+    z = 0,
+  } = {},
+  name,
+}) => {
+  return (
+      <Text style={styles.welcome}>{name}: {x} / {y} / {z}</Text>
+  )
+};
 
 class SensorsDisplay extends Component {
   render() {
@@ -28,7 +37,7 @@ class SensorsDisplay extends Component {
       Magnetometer,
     } = this.props;
 
-    debugger;
+    // console.debug(this.props);
 
     return (
       <View style={styles.container}>
