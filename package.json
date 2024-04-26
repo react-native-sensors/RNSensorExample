@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.3.2",
+    "react": "18.3.1",
     "react-native": "0.39.2",
     "react-native-scrollable-tab-view": "0.7.4",
     "react-native-sensors": "next"
@@ -16,7 +16,7 @@
     "babel-jest": "22.4.3",
     "babel-preset-react-native": "1.9.2",
     "jest": "22.4.3",
-    "react-test-renderer": "16.3.2"
+    "react-test-renderer": "18.3.1"
   },
   "jest": {
     "preset": "react-native"
